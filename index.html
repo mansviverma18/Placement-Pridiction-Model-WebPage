@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Placement Prediction System</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="#" class="logo">PlacementPredict</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#upload">Upload Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="profile-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="User Icon" class="profile-icon" id="profileIcon" tabindex="0" aria-expanded="false" aria-controls="dashboardDropdown" />
+                <div class="dashboard-dropdown hidden" id="dashboardDropdown">
+                    <div class="user-info">
+                        <p class="welcome">👋 Welcome back, <span class="user-name">Aryan</span></p>
+                    </div>
+                    <ul class="dashboard-menu">
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Job Matches</a></li>
+                        <li><a href="#">Applications</a></li>
+                        <li><a href="#">Resume Score <span class="score">85%</span></a></li>
+                        <li><a href="#">Mock Interviews</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                    <div class="quick-stats">
+                        <p>Job Matches: <span class="count">12</span></p>
+                        <p>Upcoming: Wipro - Apr 14</p>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkModeToggle" class="dark-mode-checkbox" />
+                <label for="darkModeToggle" class="dark-mode-label">
+                    <span class="sun">🌞</span>
+                    <span class="moon">🌙</span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Unlock Your Potential with <span class="highlight">AI-Powered</span> Placements</h1>
+                <p class="subheader">Revolutionizing campus placements through intelligent insights and personalized guidance.</p>
+                <button class="cta-btn">Get Started</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://img.freepik.com/free-vector/group-young-graduates-with-diplomas-graduation-hats-mortarboards-holding-certificates-isolated-white-background_335657-2433.jpg?w=740&t=st=1713030018~exp=1713030618~hmac=91c27511149111a1629a8b2616a668142c8d0169a2119612938f1d615c131105" alt="Graduation Illustration">
+            </div>
+        </div>
+    </header>
+
+    <section class="search-section container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search features or resources..." />
+            <button class="search-button">Search</button>
+        </div>
+        <ul id="suggestions-list" class="suggestions-list hidden"></ul>
+    </section>
+
+    <section id="features" class="features-section container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            </div>
+    </section>
+
+    <section id="upload" class="upload-section container">
+        <h2 class="section-title">Upload Your Resume</h2>
+        <div class="upload-card">
+            <div class="upload-box">
+                <input type="file" id="resumeUpload" class="hidden-input" accept=".pdf,.doc,.docx" />
+                <label for="resumeUpload" class="upload-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="upload-icon">
+                        <path fill-rule="evenodd" d="M12 16.5a.75.75 0 01-.75-.75V7.5a.75.75 0 011.5 0v8.25a.75.75 0 01-.75.75zM12 3a.75.75 0 01.75.75v8.25a.75.75 0 01-1.5 0V3.75A.75.75 0 0112 3zm-8.25 8.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H4.5a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Drag & drop your resume here or <span class="browse-text">browse</span></span>
+                </label>
+                <p id="uploadStatus" class="upload-status"></p>
+            </div>
+            <div class="progress-bar-container">
+                <label for="resumeProgress">Resume Score:</label>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="resumeProgress" style="width: 85%;">
+                        <span class="progress-text" id="resumeScoreText">85%</span>
+                    </div>
+                </div>
+                <p class="note">We'll analyze your resume to provide personalized recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section container">
+        <h2 class="section-title">Our Impact</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <h3 class="stat-number"><span class="counter" data-target="2300">0</span>+</h3>
+                <p class="stat-label">Students Assisted</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="stat-number"><span class="counter" data-target="450">0</span>+</h3>
+                <p class="stat-label">Companies Partnered</p>
+            </div>
+            <div class="stat-box">
+                <h3 class="stat-number"><span class="counter" data-target="95">0</span>%</h3>
+                <p class="stat-label">Placement Success Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 PlacementPredict | Empowering Your Future</p>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-top-btn hidden">⬆</button>
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
